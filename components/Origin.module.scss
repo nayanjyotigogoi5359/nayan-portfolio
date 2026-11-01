@@ -1,0 +1,10 @@
+@use "../styles/tokens" as *;
+.sec { @include chapter; background: $bg-2; }
+.h { font-size: clamp(2rem, 5.5vw, 4.5rem); max-width: 18ch; margin: 1rem 0 4rem; }
+.list { list-style: none; padding: 0; margin-left: 0; border-left: 1px solid $accent; @include up(900px) { margin-left: 33%; }
+  li { padding: 0 0 2.2rem 1.8rem; position: relative;
+    &::before { content: ""; position: absolute; left: -4px; top: .4rem; width: 7px; height: 7px; background: $accent-2; border-radius: 50%; }
+    h3 { font-size: 1.6rem; margin: .3rem 0 .4rem; }
+    p { color: $muted; max-width: 36rem; }
+  }
+}

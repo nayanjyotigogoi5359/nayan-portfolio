@@ -1,0 +1,5 @@
+@use "../styles/tokens" as *;
+.sec { @include chapter; }
+.big { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.9rem, 5.2vw, 4.6rem); line-height: 1.08; letter-spacing: -.03em; max-width: 22ch; margin-bottom: clamp(3rem, 9vw, 7rem); }
+.facts { display: grid; gap: 2rem; @include up(900px) { grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+  > div { border-top: 1px solid $accent; padding-top: 1rem; } dt { color: $accent-2; margin-bottom: .6rem; } dd { margin: 0; color: $muted; max-width: 26rem; } }

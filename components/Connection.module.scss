@@ -1,0 +1,12 @@
+@use "../styles/tokens" as *;
+.sec { @include chapter; min-height: 80svh; display: flex; flex-direction: column; justify-content: center; }
+.h { font-size: clamp(2.6rem, 9vw, 8.5rem); max-width: 12ch; margin: 1rem 0 1.5rem; }
+.copy { color: $muted; max-width: 38rem; font-size: 1.05rem; margin-bottom: 2.5rem; }
+.links { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; font-size: 1.2rem;
+  a { display: inline-flex; align-items: center; gap: .5rem; border-bottom: 1px solid $line; padding-bottom: .3rem; transition: color .25s, border-color .25s;
+    &:hover { color: $accent-2; border-color: $accent-2; }
+    span { color: $accent-2; font-size: .8em; }
+  }
+}
+.word { font-family: var(--font-display); font-weight: 700; font-size: clamp(5rem, 24vw, 22rem); line-height: .8; letter-spacing: -.05em; margin-top: 4rem; color: transparent; -webkit-text-stroke: 1px rgba($accent-2, .5); user-select: none; overflow-wrap: anywhere; }
+.foot { margin-top: 2rem; }

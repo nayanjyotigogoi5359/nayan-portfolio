@@ -1,0 +1,10 @@
+$bg: #090b10;
+$bg-2: #111722;
+$accent: #245bff;
+$accent-2: #70b7ff;
+$text: #e8edf5;
+$muted: #858d9b;
+$line: rgba(232, 237, 245, 0.12);
+$ease: cubic-bezier(0.22, 1, 0.36, 1);
+@mixin up($w) { @media (min-width: $w) { @content; } }
+@mixin chapter { padding: clamp(5rem, 14vh, 10rem) clamp(1.25rem, 5vw, 5rem); position: relative; }

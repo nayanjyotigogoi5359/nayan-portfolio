@@ -1,0 +1,15 @@
+@use "../styles/tokens" as *;
+.sec { min-height: 100svh; display: grid; align-items: center; gap: 2rem; padding: 5rem clamp(1.25rem, 5vw, 5rem); background: $bg-2; overflow: hidden;
+  @include up(900px) { grid-template-columns: 1fr 1fr; } }
+.copy { h2 { font-size: clamp(2.2rem, 5.5vw, 5rem); max-width: 12ch; margin: 1rem 0; } .sub { color: $muted; max-width: 26rem; } }
+.stage { position: relative; perspective: 1400px; justify-self: center; width: min(80vw, 30rem); }
+.orbit { position: absolute; inset: -14%; width: 128%; pointer-events: none; }
+.frame { position: relative; transform-style: preserve-3d; }
+.photo { --g: 0; --b: 1; position: relative; display: flex; aspect-ratio: 936 / 1010; overflow: hidden; background: $bg; border: 1px solid $line;
+  filter: grayscale(var(--g)) brightness(var(--b)) contrast(1.05); }
+.strip { flex: 1; margin-right: -1px; background-image: url("/nayan.jpg"); background-size: 900% 100%; background-repeat: no-repeat; }
+.tint { position: absolute; inset: 0; background: $accent; mix-blend-mode: color; opacity: 0; pointer-events: none; }
+.scan { position: absolute; left: -4%; right: -4%; top: 0; height: 2px; background: $accent-2; box-shadow: 0 0 22px 4px rgba($accent, .7); opacity: 0; }
+.corner { position: absolute; width: 22px; height: 22px; border: 2px solid $accent-2; }
+.c1 { top: -8px; left: -8px; border-right: 0; border-bottom: 0; }
+.c2 { bottom: -8px; right: -8px; border-left: 0; border-top: 0; }

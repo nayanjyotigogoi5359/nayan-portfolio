@@ -1,0 +1,20 @@
+@use "../styles/tokens" as *;
+.sec { @include chapter; }
+.h { font-size: clamp(2rem, 5vw, 4rem); max-width: 20ch; margin: 1rem 0 2rem; }
+.legend { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .8rem 1.4rem; margin-bottom: 3rem; font-size: .85rem; color: $muted;
+  li { display: flex; align-items: center; gap: .5rem; } }
+.dot { display: inline-block; width: .65rem; height: .65rem; flex: none; border-radius: 50%; }
+.using { background: $accent; }
+.building { background: $accent-2; }
+.learning { border: 1px solid $accent-2; }
+.practising { border: 1px dashed $accent-2; }
+.exploring { border: 1px dashed $muted; }
+.grid { display: grid; gap: 2.5rem 4rem; @include up(800px) { grid-template-columns: 1fr 1fr; } }
+.group { border-top: 1px solid $line; padding-top: 1rem;
+  h3 { font-size: 1.4rem; margin-bottom: 1rem; }
+  ul { list-style: none; padding: 0; }
+  li { display: flex; align-items: center; gap: .8rem; padding: .75rem 0; border-bottom: 1px solid $line;
+    span:nth-of-type(1) { flex: 1; }
+    span:nth-of-type(2) { color: $muted; font-size: .68rem; white-space: nowrap; }
+  }
+}

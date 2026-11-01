@@ -1,0 +1,36 @@
+@use "../styles/tokens" as *;
+.sec { @include chapter; background: $bg-2; }
+.h { font-size: clamp(2.2rem, 6vw, 5.5rem); max-width: 14ch; margin: 1rem 0 1.5rem; }
+.intro { max-width: 42rem; color: $muted; margin-bottom: clamp(3rem, 7vw, 5rem); }
+.project { display: grid; gap: 2rem; margin-bottom: clamp(4rem, 10vw, 8rem); background: $bg; border: 1px solid $line; padding: clamp(1rem, 3vw, 2.5rem);
+  @include up(900px) { grid-template-columns: 7fr 5fr; align-items: center;
+    &.flip { grid-template-columns: 5fr 7fr; .visual { order: 2; } }
+  }
+}
+.visual { position: relative; aspect-ratio: 4/3; border: 1px solid $line; overflow: hidden; background: $bg;
+  > span { position: absolute; left: 1rem; top: 1rem; z-index: 1; padding: .35rem .55rem; background: rgba($bg, .86); border: 1px solid $line; font-size: .65rem; }
+  &:hover { border-color: $accent; .grid { transform: scale(1.06); } }
+}
+.grid { position: absolute; inset: 0; background-image: linear-gradient($line 1px, transparent 1px), linear-gradient(90deg, $line 1px, transparent 1px); background-size: 40px 40px; transition: transform 1.2s $ease;
+  mask-image: radial-gradient(circle at 70% 60%, #000, transparent 75%); }
+.body {
+  h3 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin: .6rem 0 1rem; }
+  .desc { color: $muted; margin-bottom: 1.5rem; }
+  dl { display: grid; gap: .35rem; }
+  dt { margin-top: .8rem; color: $accent-2; }
+  dd { margin: 0; color: rgba($text, .82); font-size: .94rem; }
+}
+.link { display: inline-flex; gap: .5rem; align-items: center; margin-top: 1.5rem; border-bottom: 1px solid $accent; padding-bottom: .25rem; }
+.art { position: absolute; inset: 0; transition: transform 1.2s $ease; }
+.visual:hover .art { transform: scale(1.04); }
+@media (min-width: 900px) {
+  .project { position: sticky; margin-bottom: 14vh;
+    &:nth-of-type(1) { top: 5.5rem; }
+    &:nth-of-type(2) { top: 7rem; }
+    &:nth-of-type(3) { top: 8.5rem; }
+  }
+}
+@media (max-width: 599px) {
+  .project { gap: 1.4rem; }
+  .body dd { font-size: .9rem; }
+}

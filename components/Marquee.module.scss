@@ -1,0 +1,6 @@
+@use "../styles/tokens" as *;
+.wrap { overflow: hidden; border-block: 1px solid $line; background: $bg; padding: 1.1rem 0; }
+.track { display: flex; width: max-content; animation: slide 38s linear infinite;
+  span { font-family: var(--font-display); font-size: clamp(1.6rem, 4vw, 3rem); font-weight: 600; padding-right: 3rem; color: transparent; -webkit-text-stroke: 1px rgba($text, .45);
+    &:nth-child(3n) { color: $accent; -webkit-text-stroke: 0; } } }
+@keyframes slide { to { transform: translateX(-50%); } }

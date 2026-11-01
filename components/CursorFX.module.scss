@@ -1,0 +1,7 @@
+@use "../styles/tokens" as *;
+.spot { position: fixed; inset: 0; z-index: 40; pointer-events: none; opacity: 0; transition: opacity .5s; mix-blend-mode: screen;
+  background: radial-gradient(circle 320px at var(--mx, 50%) var(--my, 50%), rgba($accent, .15), transparent 70%); &[data-on="1"] { opacity: 1; } }
+.ring, .dot { position: fixed; left: 0; top: 0; z-index: 70; pointer-events: none; opacity: 0; transition: opacity .3s; &[data-on="1"] { opacity: 1; } }
+.ring { width: 36px; height: 36px; border: 1px solid rgba($accent-2, .75); border-radius: 18px; transition: opacity .3s, background .3s, border-color .3s;
+  &[data-mode="link"] { background: rgba($accent, .14); border-color: $accent-2; } }
+.dot { width: 6px; height: 6px; background: $accent-2; border-radius: 50%; }
